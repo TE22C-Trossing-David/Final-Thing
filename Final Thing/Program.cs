@@ -1,33 +1,36 @@
-﻿Player hero = new();
+﻿using System.Runtime.InteropServices;
+
+Player hero = new();
+EnemyList enemyList = new();
+
+hero.AddItem(new Axe("Cool Axe", 10, 10, 3, 2, "Slashing"));
+hero.AddItem(new Axe("Cooler Axe", 15, 15, 3, 2, "Slashing"));
+
+enemyList.AddEnemy(new Knight());
+enemyList.AddEnemy(new Goblin());
+enemyList.AddEnemy(new Knight());
+
+enemyList.CheckEnemyList();
+enemyList.PrintEnemyList();
+hero.CheckFullInv();
+
+while (true)
+{
+    enemyList.Next();
+
+    Console.ReadLine();
+}
+
+
+
+
+
+
+
+
 
 // hero.inventory.Add();
 
-List<Enemy> enemies = new();
+// toKill.Clear();
 
-enemies.Add(new());
-enemies.Add(new());
-enemies.Add(new());
-enemies.Add(new());
-enemies.Add(new());
-enemies.Add(new());
-enemies.Add(new());
-
-List<Enemy> toKill = new();
-
-for (int i = 0; i < enemies.Count; i++)
-{
-    if (enemies[i]._hp <= 0)
-    {
-        // enemies.RemoveAt(i);
-        toKill.Add(enemies[i]);
-    }
-}
-
-foreach (Enemy e in toKill)
-{
-    enemies.Remove(e);
-}
-
-toKill.Clear();
-
-enemies.RemoveAll(e => e._hp <= 0);
+// enemies.RemoveAll(e => e._hp <= 0);

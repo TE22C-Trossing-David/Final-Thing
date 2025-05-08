@@ -1,0 +1,15 @@
+C:\Programering 2\Final Thing\Final Thing\bin\Debug\net8.0\Final Thing.exe
+C:\Programering 2\Final Thing\Final Thing\bin\Debug\net8.0\Final Thing.deps.json
+C:\Programering 2\Final Thing\Final Thing\bin\Debug\net8.0\Final Thing.runtimeconfig.json
+C:\Programering 2\Final Thing\Final Thing\bin\Debug\net8.0\Final Thing.dll
+C:\Programering 2\Final Thing\Final Thing\bin\Debug\net8.0\Final Thing.pdb
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.AssemblyInfoInputs.cache
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.AssemblyInfo.cs
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.csproj.CoreCompileInputs.cache
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.sourcelink.json
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.dll
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\refint\Final Thing.dll
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.pdb
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.genruntimeconfig.cache
+C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\ref\Final Thing.dll
