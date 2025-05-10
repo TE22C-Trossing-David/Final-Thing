@@ -1,23 +1,31 @@
 ﻿using System.Runtime.InteropServices;
 
-Player hero = new();
+Player player = new();
 EnemyList enemyList = new();
+InputHandler inputHandler = new(player);
 
-hero.AddItem(new Axe("Cool Axe", 10, 10, 3, 2, "Slashing"));
-hero.AddItem(new Axe("Cooler Axe", 15, 15, 3, 2, "Slashing"));
+//Adding everything--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+player.AddItem(new Axe("Cool Axe", 10, 10, 3, 2, "Slashing"));
+player.AddItem(new Axe("Cooler Axe", 15, 15, 3, 2, "Slashing"));
 
 enemyList.AddEnemy(new Knight());
 enemyList.AddEnemy(new Goblin());
 enemyList.AddEnemy(new Knight());
 
+
+inputHandler.MakeMenus();
+
+
+//Debug ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 enemyList.CheckEnemyList();
 enemyList.PrintEnemyList();
-hero.CheckFullInv();
+player.CheckFullInv();
+
+//Start of Game\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 while (true)
 {
-    enemyList.Next();
-
+    inputHandler.OpenMenus();
     Console.ReadLine();
 }
 
