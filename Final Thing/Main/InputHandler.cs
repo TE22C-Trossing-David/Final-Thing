@@ -14,36 +14,55 @@ public class InputHandler
     Dictionary<string, Action> _mainMenus;
     Dictionary<string, Action> _attackMenus;
 
+    //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //Skapar allt i dictionaryn
     public void MakeMenus()
     {
         _mainMenus = new Dictionary<String, Action>
         {
-            { "attack", () => EnterAttackMenu() },
-            { "block", () => Block() },
+            { "attack", EnterAttackMenu },
+            { "atack", EnterAttackMenu },
+            { "a", EnterAttackMenu },
+            { "1", EnterAttackMenu },
+            { "block", Block },
+            { "b", Block },
+            { "2", Block },
+
         };
 
         _attackMenus = new Dictionary<string, Action>
         {
-            { "basic attack", () => BasicAttack() },
-            { "special attack", () => SpecialAttack() },
+            { "basic attack", BasicAttack },
+            { "basic atack", BasicAttack },
+            { "basic", BasicAttack },
+            { "1", BasicAttack },
+            { "b", BasicAttack },
+            { "special attack", SpecialAttack},
+            { "special atack", SpecialAttack},
+            { "special", SpecialAttack},
+            { "2", SpecialAttack},
+            { "s", SpecialAttack}
         };
     }
 
-    //Används för att starta menyerna och sköter allt med player input.
+    //
     public void OpenMenus()
     {
         bool correctInput = false;
         string _playerInput;
-
+        //Frågar vad spelaren vill göra och repetar tills spelaren skriver något som finns i dictionaryn.
         while (!correctInput)
         {
+            //tar spelarens input och 
             if (CurrentMenue == "main")
             {
                 Console.WriteLine("What action do you want to do?\nAttack\nBlock");
 
                 _playerInput = Console.ReadLine().ToLower();
                 Console.Clear();
+
+
                 if (_mainMenus.ContainsKey(_playerInput))
                 {
                     _mainMenus[_playerInput]();

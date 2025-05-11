@@ -6,6 +6,8 @@ public class Weapon(string name, int weight, int damage, int durability, int han
     private int _hands = hands;
     private string _dmgType = dmgType;
 
+    //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //Gör en Basic Attack
     public virtual int BasicAttack()
     {

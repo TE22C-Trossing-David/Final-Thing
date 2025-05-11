@@ -6,6 +6,9 @@ public class Player
     private List<Item> _inventory = new List<Item>();
     Weapon _weaponBeingUsed;
 
+    //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //Fighting
     public void BasicAttack()
     {
         Console.WriteLine("you attack");
@@ -19,11 +22,7 @@ public class Player
         isBlocking = true;
     }
 
-    public string WeaponBeingUsed()
-    {
-        return _weaponBeingUsed.ToString();
-    }
-
+    //Inventory
     public void AddItem(Item item)
     {
         _inventory.Add(item);
@@ -40,5 +39,12 @@ public class Player
     public void CheckInvSpace(int position)
     {
         Console.WriteLine(_inventory[position - 1]);
+    }
+
+    //Other
+
+    public string GetWeaponBeingUsed()
+    {
+        return _weaponBeingUsed.ToString();
     }
 }

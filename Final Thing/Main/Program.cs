@@ -1,5 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-
+//Inastaciating everything------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Player player = new();
 EnemyList enemyList = new();
 InputHandler inputHandler = new(player);
@@ -23,22 +23,11 @@ player.CheckFullInv();
 
 //Start of Game\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Main game loop
 while (true)
 {
+    Console.WriteLine("");
+
     inputHandler.OpenMenus();
     Console.ReadLine();
 }
-
-
-
-
-
-
-
-
-
-// hero.inventory.Add();
-
-// toKill.Clear();
-
-// enemies.RemoveAll(e => e._hp <= 0);

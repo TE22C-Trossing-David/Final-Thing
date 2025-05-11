@@ -13,3 +13,18 @@ C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\refint\Final Thing.dl
 C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.pdb
 C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\Final Thing.genruntimeconfig.cache
 C:\Programering 2\Final Thing\Final Thing\obj\Debug\net8.0\ref\Final Thing.dll
+D:\Projects\Final-Thing\Final Thing\bin\Debug\net8.0\Final Thing.exe
+D:\Projects\Final-Thing\Final Thing\bin\Debug\net8.0\Final Thing.deps.json
+D:\Projects\Final-Thing\Final Thing\bin\Debug\net8.0\Final Thing.runtimeconfig.json
+D:\Projects\Final-Thing\Final Thing\bin\Debug\net8.0\Final Thing.dll
+D:\Projects\Final-Thing\Final Thing\bin\Debug\net8.0\Final Thing.pdb
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.AssemblyInfoInputs.cache
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.AssemblyInfo.cs
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.csproj.CoreCompileInputs.cache
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.sourcelink.json
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.dll
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\refint\Final Thing.dll
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.pdb
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\Final Thing.genruntimeconfig.cache
+D:\Projects\Final-Thing\Final Thing\obj\Debug\net8.0\ref\Final Thing.dll

@@ -1,6 +1,8 @@
 public class Axe(string name, int weight, int damage, int durability, int hands, string dmgType)
     : Weapon(name, weight, damage, durability, hands, dmgType)
 {
+    //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //Kalkulerar damagen för Axe Swing attacken
     public override int BasicAttack()
     {
