@@ -3,18 +3,29 @@ public class Player
     string name;
     int hp;
     public bool isBlocking = false;
-    private List<Item> _inventory = new List<Item>();
-    Weapon _weaponBeingUsed;
+    private List<Item> _inventory = new();
+    private List<Weapon> _weapons = new();
+
+    Weapon _weaponBeingUsed = null;
 
     //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //Fighting
-    public void BasicAttack()
+    public void SetCurrentWeapon(Weapon weapon)
     {
-        Console.WriteLine("you attack");
+        _weaponBeingUsed = weapon;
     }
 
-    public void SpecialAttack() { }
+    //Fighting
+    public void BasicAttack(Enemy enemy)
+    {
+        enemy._hp -= _weaponBeingUsed.BasicAttack();
+        System.Console.WriteLine(enemy._hp);
+    }
+
+    public void SpecialAttack(Enemy enemy)
+    {
+        enemy._hp -= _weaponBeingUsed.SpecialAttack();
+    }
 
     public void Block()
     {
@@ -27,6 +38,10 @@ public class Player
     {
         _inventory.Add(item);
     }
+    public void AddWeapon(Weapon weapon)
+    {
+        _weapons.Add(weapon);
+    }
 
     public void CheckFullInv()
     {
@@ -36,15 +51,27 @@ public class Player
         }
     }
 
-    public void CheckInvSpace(int position)
+    public Item GetInvSpace(int position)
     {
-        Console.WriteLine(_inventory[position - 1]);
+        return _inventory[position-1];
+    }
+
+    public Weapon GetWeapon(int position)
+    {
+        return _weapons[position-1];
     }
 
     //Other
 
     public string GetWeaponBeingUsed()
     {
-        return _weaponBeingUsed.ToString();
+        if (_weaponBeingUsed != null)
+        {
+            return _weaponBeingUsed.ToString();
+        }
+        else
+        {
+            return "No weapon is equiped";
+        }
     }
 }

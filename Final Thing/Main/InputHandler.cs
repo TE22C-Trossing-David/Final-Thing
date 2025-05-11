@@ -4,10 +4,14 @@ public class InputHandler
 {
     private Player _player;
 
-    public InputHandler(Player player)
+    private EnemyList _enemyList;
+
+    public InputHandler(Player player, EnemyList enemyList)
     {
         _player = player;
+        _enemyList = enemyList;
     }
+
 
     string CurrentMenue = "main";
 
@@ -49,19 +53,18 @@ public class InputHandler
     //
     public void OpenMenus()
     {
+        CurrentMenue = "main";
         bool correctInput = false;
         string _playerInput;
         //Frågar vad spelaren vill göra och repetar tills spelaren skriver något som finns i dictionaryn.
         while (!correctInput)
         {
-            //tar spelarens input och 
+            //Tar spelarens input och öppnar rätt meny/gör rätt action
             if (CurrentMenue == "main")
             {
                 Console.WriteLine("What action do you want to do?\nAttack\nBlock");
-
                 _playerInput = Console.ReadLine().ToLower();
                 Console.Clear();
-
 
                 if (_mainMenus.ContainsKey(_playerInput))
                 {
@@ -70,7 +73,7 @@ public class InputHandler
                 }
                 else
                 {
-                    Console.WriteLine("That is not an action");
+                    Console.WriteLine("That is not an action\n");
                 }
             }
             if (CurrentMenue == "attack")
@@ -105,11 +108,11 @@ public class InputHandler
 
     void BasicAttack()
     {
-        _player.BasicAttack();
+        _player.BasicAttack(_enemyList.CurrentEnemy());
     }
 
     void SpecialAttack()
     {
-        _player.SpecialAttack();
+        _player.SpecialAttack(_enemyList.CurrentEnemy());
     }
 }
