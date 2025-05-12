@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+
 //Inastaciating everything------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Player player = new();
 EnemyList enemyList = new();
@@ -25,10 +26,8 @@ void StartBattle()
     while (!battleOver)
     {
         inputHandler.OpenMenus();
-        Console.Clear();
-        enemyList.PrintEnemyList();
-        enemyList.EnemyAttack();
         enemyList.KillDeadEnemies();
+        enemyList.EnemyAttack();
         if (enemyList.isEnemiesDead())
         {
             battleOver = true;
@@ -36,17 +35,15 @@ void StartBattle()
     }
 }
 
-//Debug ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-enemyList.KillDeadEnemies();
-enemyList.PrintEnemyList();
-player.CheckFullInv();
-
 //Start of Game\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Main game loop
 while (true)
 {
-    Console.WriteLine("Welcome to RPGLandia, here you will fight enemy after enemy untill you have defeted all enemies. Press enter to start your adventure!");
+    Console.Clear();
+    Console.WriteLine(
+        "Welcome to RPGLandia, here you will fight enemy after enemy untill you have defeted all enemies. Press enter to start your adventure!"
+    );
     Console.ReadLine();
 
     while (true)

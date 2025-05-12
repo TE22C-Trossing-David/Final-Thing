@@ -19,7 +19,7 @@ public class Player
     public void BasicAttack(Enemy enemy)
     {
         enemy._hp -= _weaponBeingUsed.BasicAttack();
-        System.Console.WriteLine(enemy._hp);
+        System.Console.WriteLine(enemy._name + " now has " + enemy._hp + " HP");
     }
 
     public void SpecialAttack(Enemy enemy)
@@ -38,6 +38,7 @@ public class Player
     {
         _inventory.Add(item);
     }
+
     public void AddWeapon(Weapon weapon)
     {
         _weapons.Add(weapon);
@@ -53,12 +54,12 @@ public class Player
 
     public Item GetInvSpace(int position)
     {
-        return _inventory[position-1];
+        return _inventory[position - 1];
     }
 
     public Weapon GetWeapon(int position)
     {
-        return _weapons[position-1];
+        return _weapons[position - 1];
     }
 
     //Other
