@@ -64,8 +64,6 @@ public class InputHandler
             {
                 Console.WriteLine("What action do you want to do?\nAttack\nBlock");
                 _playerInput = Console.ReadLine().ToLower();
-                Console.Clear();
-
                 if (_mainMenus.ContainsKey(_playerInput))
                 {
                     _mainMenus[_playerInput]();
@@ -80,7 +78,6 @@ public class InputHandler
             {
                 Console.WriteLine("What action do you want to do?\nBasic Attack\nSpecial Attack");
                 _playerInput = Console.ReadLine().ToLower();
-                Console.Clear();
                 if (_attackMenus.ContainsKey(_playerInput))
                 {
                     _attackMenus[_playerInput]();
