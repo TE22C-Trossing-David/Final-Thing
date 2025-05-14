@@ -107,12 +107,15 @@ public class BattleHandler
         {
 
             OpenMenus();
+            if (_enemyList.CurrentEnemy().GetHp() >= 0)
+            {
+                _enemyList.EnemyAttack();
+            }
             _enemyList.KillDeadEnemies();
             if (_enemyList.AreEnemiesDead())
             {
                 battleOver = true;
             }
-            _enemyList.EnemyAttack();
         }
         Console.WriteLine("\nCongrats you have won the battle\nPress Enter to start the next battle or type EXIT to exit the game");
         try
