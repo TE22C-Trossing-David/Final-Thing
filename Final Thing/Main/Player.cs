@@ -1,8 +1,6 @@
 public class Player
 {
-    string name;
-    int hp;
-    public bool isBlocking = false;
+    private bool isBlocking = false;
     private List<Item> _inventory = new();
     private List<Weapon> _weapons = new();
 
@@ -18,18 +16,17 @@ public class Player
     //Fighting
     public void BasicAttack(Enemy enemy)
     {
-        enemy._hp -= _weaponBeingUsed.BasicAttack();
-        System.Console.WriteLine(enemy._name + " now has " + enemy._hp + " HP");
+        enemy.Damage(_weaponBeingUsed.BasicAttack());
     }
 
     public void SpecialAttack(Enemy enemy)
     {
-        enemy._hp -= _weaponBeingUsed.SpecialAttack();
+        enemy.Damage(_weaponBeingUsed.SpecialAttack());
     }
 
     public void Block()
     {
-        Console.WriteLine("you block");
+        Console.WriteLine("You block");
         isBlocking = true;
     }
 
@@ -62,8 +59,6 @@ public class Player
         return _weapons[position - 1];
     }
 
-    //Other
-
     public string GetWeaponBeingUsed()
     {
         if (_weaponBeingUsed != null)
@@ -72,7 +67,7 @@ public class Player
         }
         else
         {
-            return "No weapon is equiped";
+            return "No weapon is equipped";
         }
     }
 }

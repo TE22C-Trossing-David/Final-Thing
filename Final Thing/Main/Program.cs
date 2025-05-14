@@ -1,39 +1,17 @@
-﻿using System.Runtime.InteropServices;
-
-//Inastaciating everything------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Player player = new();
-EnemyList enemyList = new();
-InputHandler inputHandler = new(player, enemyList);
+﻿
 
 //Adding everything--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Player player = new();
+EnemyList enemyList = new();
+BattleHandler battleHandler = new(player, enemyList);
+
 player.AddWeapon(new Axe("Cool Axe", 10, 10, 3, 2, "Slashing"));
 player.AddWeapon(new Axe("Cooler Axe", 15, 15, 3, 2, "Slashing"));
 
-inputHandler.MakeMenus();
+battleHandler.MakeMenus();
 player.SetCurrentWeapon(player.GetWeapon(1));
 
-void StartBattle()
-{
-    Console.Clear();
-    bool battleOver = false;
-    enemyList.AddEnemy(new Goblin());
-    enemyList.AddEnemy(new Goblin());
-    enemyList.AddEnemy(new Knight());
-
-    Console.WriteLine("Enemies loaded");
-
-    enemyList.Next();
-    while (!battleOver)
-    {
-        inputHandler.OpenMenus();
-        enemyList.KillDeadEnemies();
-        enemyList.EnemyAttack();
-        if (enemyList.isEnemiesDead())
-        {
-            battleOver = true;
-        }
-    }
-}
+//-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Start of Game\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -42,15 +20,11 @@ while (true)
 {
     Console.Clear();
     Console.WriteLine(
-        "Welcome to RPGLandia, here you will fight enemy after enemy untill you have defeted all enemies. Press enter to start your adventure!"
+        "Welcome to RPGLandia, here you will fight enemy after enemy until you have defeated all enemies.\nPress enter to start your adventure!"
     );
     Console.ReadLine();
-
     while (true)
     {
-        StartBattle();
-        break;
+        battleHandler.StartBattle();
     }
-    System.Console.WriteLine("congrats you have won the battle");
-    Console.ReadLine();
 }

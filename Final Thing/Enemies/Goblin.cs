@@ -1,8 +1,5 @@
 public class Goblin : Enemy
 {
-    private string name = "Goblin";
-    private int hp = 10;
-
     public Goblin()
     {
         _name = "Goblin";

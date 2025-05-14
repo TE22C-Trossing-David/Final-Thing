@@ -1,13 +1,9 @@
-public class EnemyList()
+public class EnemyList
 {
     private List<Enemy> _enemies = new();
-    private Enemy _currentEnemy = new();
+    private Enemy _currentEnemy;
     private Queue<Enemy> _enemiesQueue = new();
-    private List<Enemy> _toKill = new();
-    private Stack<Enemy> _deadEnemies = new();
-
     //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
     public void AddEnemy(Enemy enemy)
     {
@@ -20,15 +16,6 @@ public class EnemyList()
         return _currentEnemy;
     }
 
-    public void PrintEnemyList()
-    {
-        foreach (Enemy e in _enemies)
-        {
-            Console.WriteLine(e._name + ": Hp:" + e._hp);
-        }
-    }
-
-    //Tar bort enemyn högst i kö och säger vad för enemy man fightar nu.
     public void Next()
     {
         if (_enemiesQueue.Count > 0)
@@ -36,11 +23,12 @@ public class EnemyList()
             _currentEnemy = _enemiesQueue.Dequeue();
             Console.WriteLine(
                 "You are now fighing a "
-                    + _currentEnemy._name
+                    + _currentEnemy.GetName()
                     + " With "
-                    + _currentEnemy._hp
-                    + " Hp\n"
+                    + _currentEnemy.GetHp()
+                    + " Hp"
             );
+            
         }
         else
         {
@@ -51,41 +39,17 @@ public class EnemyList()
     //Lägger till alla enemies med 0 hp i "_toKill". Sen tar bort alla enemies som är i "_toKill" från _enemies listan och lägger in i _deadEnemies listan.
     public void KillDeadEnemies()
     {
-        if (_currentEnemy._hp <= 0)
+        if (_currentEnemy.GetHp() <= 0)
         {
-            Console.WriteLine(_currentEnemy._name + " has died");
+            Console.WriteLine(_currentEnemy.GetName() + " has died");
             _enemies.Remove(_currentEnemy);
             Next();
         }
-        // for (int i = 0; i < _enemies.Count; i++)
-        // {
-        //     if (_enemies[i]._hp <= 0)
-        //     {
-
-        //         _toKill.Add(_enemies[i]);
-        //     }
-        // }
-
-        // foreach (Enemy e in _toKill)
-        // {
-
-
-        //     _enemies.Remove(e);
-        //     _deadEnemies.Push(e);
-        //     Next();
-        // }
     }
 
-    public bool isEnemiesDead()
+    public bool AreEnemiesDead()
     {
-        if (_enemies.Count() == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return _enemies.Count() == 0;
     }
 
     public void EnemyAttack()

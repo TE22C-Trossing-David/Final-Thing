@@ -1,6 +1,9 @@
-public class Axe(string name, int weight, int damage, int durability, int hands, string dmgType)
-    : Weapon(name, weight, damage, durability, hands, dmgType)
+public class Axe : Weapon
 {
+    public Axe(string name, int weight, int damage, int durability, int hands, string dmgType)
+        : base(name, weight, damage, durability, hands, dmgType)
+    {
+    }
     //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     //Kalkulerar damagen för Axe Swing attacken
@@ -22,7 +25,7 @@ public class Axe(string name, int weight, int damage, int durability, int hands,
         }
         else
         {
-            Console.WriteLine("You swing your axe for " + randomDmg);
+            Console.WriteLine("You swing your extra hard axe for " + randomDmg);
         }
         return randomDmg;
     }
