@@ -1,5 +1,3 @@
-
-
 public class BattleHandler
 {
     private Player _player;
@@ -38,13 +36,14 @@ public class BattleHandler
             { "basic", BasicAttack },
             { "1", BasicAttack },
             { "b", BasicAttack },
-            { "special attack", SpecialAttack},
-            { "special atack", SpecialAttack},
-            { "special", SpecialAttack},
-            { "2", SpecialAttack},
-            { "s", SpecialAttack}
+            { "special attack", SpecialAttack },
+            { "special atack", SpecialAttack },
+            { "special", SpecialAttack },
+            { "2", SpecialAttack },
+            { "s", SpecialAttack },
         };
     }
+
     public void StartBattle()
     {
         Console.Clear();
@@ -58,7 +57,6 @@ public class BattleHandler
             string input = Console.ReadLine();
 
             validInput = int.TryParse(input, out numberOfEnemies);
-
 
             if (validInput && numberOfEnemies > 0)
             {
@@ -84,7 +82,6 @@ public class BattleHandler
 
             validInput = int.TryParse(input, out numberOfEnemies);
 
-
             if (validInput && numberOfEnemies > 0)
             {
                 for (int i = 0; i < numberOfEnemies; i++)
@@ -99,13 +96,11 @@ public class BattleHandler
                 Console.WriteLine("Please enter a valid positive number.");
                 validInput = false;
             }
-
         }
 
         _enemyList.Next();
         while (!battleOver)
         {
-
             OpenMenus();
             if (_enemyList.CurrentEnemy().GetHp() >= 0)
             {
@@ -117,7 +112,9 @@ public class BattleHandler
                 battleOver = true;
             }
         }
-        Console.WriteLine("\nCongrats you have won the battle\nPress Enter to start the next battle or type EXIT to exit the game");
+        Console.WriteLine(
+            "\nCongrats you have won the battle\nPress Enter to start the next battle or type EXIT to exit the game"
+        );
         try
         {
             string input = Console.ReadLine()?.ToUpper();
@@ -128,10 +125,10 @@ public class BattleHandler
         }
         catch (System.Exception)
         {
-
             throw;
         }
     }
+
     public void OpenMenus()
     {
         _currentMenu = "main";
@@ -148,7 +145,6 @@ public class BattleHandler
                 Console.Write("Enter choice: ");
                 playerInput = Console.ReadLine().ToLower();
 
-
                 if (_mainMenus.ContainsKey(playerInput))
                 {
                     Console.Clear();
@@ -164,7 +160,6 @@ public class BattleHandler
             if (_currentMenu == "attack")
             {
                 correctInput = false;
-                Console.Clear();
                 Console.WriteLine("What attack do you want to do?");
                 Console.WriteLine("1. Basic Attack");
                 Console.WriteLine("2. Special Attack");
@@ -185,7 +180,6 @@ public class BattleHandler
             }
         }
     }
-
 
     // Alla actions i menyerna ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

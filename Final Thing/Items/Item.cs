@@ -1,5 +1,5 @@
 public class Item(string name, int weight)
 {
-    public string Name { get; } = name;
-    public int Weight { get; } = weight;
+    private string Name { get; } = name;
+    private int Weight { get; } = weight;
 }

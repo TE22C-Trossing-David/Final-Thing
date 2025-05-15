@@ -3,6 +3,7 @@ public class EnemyList
     private List<Enemy> _enemies = new();
     private Enemy _currentEnemy;
     private Queue<Enemy> _enemiesQueue = new();
+
     //-----------//Methods\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public void AddEnemy(Enemy enemy)
@@ -28,7 +29,6 @@ public class EnemyList
                     + _currentEnemy.GetHp()
                     + " Hp"
             );
-            
         }
         else
         {
